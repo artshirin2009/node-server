@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "nodemon index.js"
     },
     "repository": {
         "type": "git",
@@ -19,6 +19,7 @@
     "homepage": "https://github.com/artshirin2009/node-server#readme",
     "dependencies": {
         "express": "^4.16.3",
-        "express-handlebars": "^3.0.0"
+        "express-handlebars": "^3.0.0",
+        "nodemon": "^1.18.4"
     }
 }

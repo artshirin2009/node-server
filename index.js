@@ -16,7 +16,19 @@ app.set('views', path.join(__dirname, 'app/views/templates'))
 
 app.get('/', (request, response) => {
     response.render('home', {
-        user: "Arthur"
+        user: "Arthur",
+        users: [{
+                name: 'John Doe',
+                age: 30
+            },
+            {
+                name: 'Jane Doy',
+                age: 32
+            }
+        ],
+        helpers: {
+            list: require('./app/helpers/news-item')
+        }
     })
 })
 
