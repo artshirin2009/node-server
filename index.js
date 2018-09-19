@@ -1,9 +1,24 @@
+const path = require('path')
 const express = require('express');
 const app = express();
 const port = 3000;
 
+const exphbs = require('express-handlebars')
 
+app.engine('.hbs', exphbs({
+    defaultLayout: 'default',
+    extname: '.hbs',
+    layoutsDir: path.join(__dirname, 'app/views/layouts')
+}));
 
+app.set('view engine', '.hbs');
+app.set('views', path.join(__dirname, 'app/views/templates'))
+
+app.get('/', (request, response) => {
+    response.render('home', {
+        user: "Arthur"
+    })
+})
 
 app.listen(port, (err) => {
     if (err) {
